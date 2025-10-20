@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=700, initial-scale=1.0">
+  <title>프로젝트 입력 폼</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-image: url("{{ url_for('static', filename='짱구잠옷.jpg') }}");
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 700px;  
+      background: rgb(241, 241, 241);
+      box-shadow: 0 0 25px rgba(0, 0, 0, 0.13);
+      border-radius: 16px;
+      overflow: hidden;
+    }
+
+    th {
+      background-color: #baecbc;
+      color: white;
+      font-size: 32px;  
+      height: 110px;
+    }
+
+    tr {
+      height: 95px; 
+      border-bottom: 1px solid #ddd;
+    }
+
+    td {
+      padding: 20px 18px;
+      font-size: 22px;
+    }
+
+    input[type="text"], input[type="number"], input[type="time"] {
+      width: 90%;
+      padding: 18px;
+      font-size: 22px;
+      border: 1.5px solid #bbb;
+      border-radius: 6px;
+    }
+
+    input[type="submit"],
+    input[type="reset"] {
+      padding: 18px 48px;
+      margin: 20px 14px;
+      font-size: 22px;
+      border: none;
+      border-radius: 7px;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    input[type="submit"] {
+      background-color: #eef097;
+      color: white;
+    }
+
+    input[type="reset"] {
+      background-color: #f0bebe;
+      color: white;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #aedbd8;
+    }
+    input[type="reset"]:hover {
+      background-color: #a89e8d;
+    }
+  </style>
+</head>
+
+<body>
+  <form action="/result" method="post">
+    <table>
+      <tr>
+        <th colspan="2">계획을 세워요</th>
+      </tr>
+      <tr>
+        <td class="section">지역</td>
+        <td><input type="text" name="region"></td>
+      </tr>
+      <tr>
+        <td class="section">인원(명)</td>
+        <td><input type="text" name="people"></td>
+      </tr>
+      <tr>
+        <td class="section">시작 시간</td>
+        <td><input type="time" name="start_time"></td>
+      </tr>
+      <tr>
+        <td colspan="2" style="text-align: center;">
+          <input type="submit" value="확인">
+          <input type="reset" value="초기화">
+        </td>
+      </tr>
+    </table>
+  </form>
+</body>
+</html>
